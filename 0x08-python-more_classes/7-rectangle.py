@@ -7,11 +7,16 @@ class Rectangle:
     Attributes:
     attr1(width): width of rectangle
     attr2(height): height of rectangle
+    attr3(number_of_instances): number of instances
+    attr4(print_symbol): symbol for representation
     """
+    number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
+        type(self).number_of_instances += 1
 
     @property
     def height(self):
@@ -58,7 +63,16 @@ class Rectangle:
             return stringrep
         for row in range(self.__height):
             for column in range(self.__width):
-                stringrep += "#"
+                stringrep += str(self.print_symbol)
             if row < self.__height - 1:
                 stringrep += "\n"
         return stringrep
+
+    def __repr__(self):
+        """Returns the string representation of the class instance for
+        recreation"""
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+    def __del__(self):
+        print("Bye rectangle...")
+        Rectangle.number_of_instances += -1
