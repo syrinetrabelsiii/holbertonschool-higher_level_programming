@@ -1,8 +1,6 @@
  #!/usr/bin/python3
 """This module defines the add integer function
 """
-
-
 def add_integer(a, b=98):
     """ Function that adds two string.
     Args:
@@ -16,4 +14,3 @@ def add_integer(a, b=98):
     if type(b) != int and type(b) != float or b != b:
         raise TypeError("b must be an integer")
     return int(a) + int(b)
- 
