@@ -1,7 +1,7 @@
 #!/usr/bin/node
-const Square = require('4-rectangle.js');
+const Square1 = require('4-rectangle.js');
 
-module.exports = class Square extends Square {
+module.exports = class Square extends Square1 {
   charPrint (c) {
     if (c === undefined) {
       this.print();
